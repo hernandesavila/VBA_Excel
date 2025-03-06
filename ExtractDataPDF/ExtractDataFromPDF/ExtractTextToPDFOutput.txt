@@ -1,0 +1,435 @@
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+Aos cuidados de: Hernandes Oliveira 
+ 
+Localidade:Sorocaba / Poços de Caldas - MG 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+     
+ 
+Rua Correa Neto, 589 – Centro – Poços de Caldas / MG  
+hard.net@hardnetinformatica.com.br       Telefone.: (35) 3721 4750 
+ 
+ 
+1.0  Apresentação da Empresa 
+A Hard Net Tecnologia & Soluções Ltda., situada em Poços de Caldas, Minas Gerais, atua desde 1996 
+na área de tecnologia da informação (TI) e explora todos os processos tecnológicos necessários para 
+ajudar seus clientes a conduzir seu negócio com alto índice de disponibilidade em serviços de TI. 
+Com uma equipe de aproximadamente 80 colaboradores e em constante crescimento, a Hard Net é uma 
+empresa reconhecida em Poços de Caldas e região. Isso se deve ao compromisso ético assumido desde 
+sua implantação, o que abriu novas oportunidades de negócio em outros estados brasileiros. Atualmente 
+a Hard Net cresce em vários segmentos, o que é fruto de sua seriedade, profissionalismo e busca por 
+qualidade em pessoas, processos, produtos e serviços. 
+Sua principal estratégia é simplificar a TI do cliente através do desenvolvimento e implementação de 
+sistemas, inteligência de negócios, gerência de processos, outsourcing e treinamentos, proporcionando 
+assim aumento de produtividade, garantia da qualidade, redução de riscos e custos. 
+Atuando tanto em empresas de pequeno porte com recursos limitados para TI, quanto em empresas de 
+médio e grande porte, a Hard Net Consultoria e Assessoria em Tecnologia oferece soluções 
+abrangentes, utilizando as mais recentes inovações para o sucesso de sua empresa, focando sempre 
+na segurança de suas informações e no retorno de seus investimentos. 
+ 
+Buscamos assessorar nossos clientes quanto a: 
+? Melhoria de sua eficácia operacional 
+? Fornecimento de Hardware e Software 
+? Redução de custos 
+? Satisfação do cliente 
+? Gerenciamento de riscos 
+? Disponibilidade de software 
+? Escalabilidade de infraestrutura 
+? Segurança da informação 
+? Garantia de disponibilidade dos serviços ofertados 
+? Soluções em Business Inteligence (BI) 
+     
+ 
+Rua Correa Neto, 589 – Centro – Poços de Caldas / MG  
+hard.net@hardnetinformatica.com.br       Telefone.: (35) 3721 4750 
+ 
+2.0  Proposta 
+A proposta contempla demanda da Prysmian em Sorocaba Éden na parte de Gestão de Contratos – 
+Requisitos. 
+ 
+2.1. Escopo 
+ 
+MISSÃO DOS CARGOS 
+Garantiremos o cumprimento dos requisitos dos clientes (usuários finais) (SLA / nível de serviço) 
+no que se refere à disponibilidade dos recursos de informática através do atendimento, registro, 
+resolução das solicitações, administração das plataformas de tecnologia em operação. 
+ 
+  Índice 
+1. Visão Geral ......................................................................................................... 4 
+2. Requisitos Funcionais ....................................................................................... 4 
+2.1. Cadastro de Contratos ................................................................................. 4 
+2.2. Atualização de Dados .................................................................................. 5 
+2.2.1. De / Para Produto Cliente x Produto Prysmian ........................................ 5 
+2.2.2. Dados do Produtos Prysmian .................................................................. 6 
+2.2.3. Dados Faturamento e Carteira ................................................................ 6 
+2.3. Reajuste de Variações das Fórmulas COGE.............................................. 6 
+2.4. Processamento Contratos ........................................................................... 7 
+2.4.1. Sheet de Análise de Contratos ................................................................ 7 
+2.4.2. Sheet de Banco de Dados Histórico ........................................................ 8 
+2.4.3. Processamento Contratos Período Atual ................................................. 9 
+2.4.4. Reprocessamento Contratos ................................................................. 10 
+2.5. Relatórios e Gráficos ................................................................................. 11 
+2.5.1. Relatórios .............................................................................................. 11 
+2.5.2. Gráficos ................................................................................................. 11 
+3. Requisitos Não Funcionais ............................................................................. 11 
+3.1. Ambiente ..................................................................................................... 11 
+3.2. Segurança ................................................................................................... 12 
+ 
+ 
+ 
+ 
+ 
+     
+ 
+Rua Correa Neto, 589 – Centro – Poços de Caldas / MG  
+hard.net@hardnetinformatica.com.br       Telefone.: (35) 3721 4750 
+ 
+ 
+1. Visão Geral 
+ 
+Projeto para criação de uma solução para o gerenciamento dos contratos de 
+concessionárias elétricas do grupo Prysmian. O projeto prevê a gestão dos preços dos contratos 
+com base na aplicação das fórmulas de reajuste do site COGE aplicando as variações padrão da 
+COGE referente ao mês e oferecer a opção de simular os valores. Será possível também gerenciar 
+a demanda ainda restante de faturamento futuro por mês com base na data de encerramento do 
+contrato. 
+Será criada uma planilha em Excel com rotinas em VBA para atender os requisitos 
+necessáros. 
+2. Requisitos Funcionais 
+2.1. Cadastro de Contratos 
+ 
+Os contratos devem ser cadastrados na planilha, de maneira que será feita a importação 
+dos dados necessários através do arquivo de contrato no formato PDF. O conteúdo do arquivo 
+PDF pode estar de duas formas, como texto comum ou como imagem, para os dois casos deverá 
+ser usada alguma ferramenta à parte para extração dos dados de texto do arquivo PDF, mas para 
+o caso de arquivo PDF com imagem a ferramenta de extração deverá conter a funcionalidade de 
+extração de texto de imagem conhecida como OCR.  
+Na sheet principal da planilha deverá haver um botão para o cadastro de um novo contrato 
+onde, na tela de cadastro, será informado o cliente, número do contrato e o local do arquivo PDF. 
+A aplicação irá obter as informações necessárias do contrato e irá guardar os dados em uma sheet 
+de cadastros e parametrizações. Caso algum dado não seja obtido será feito a entrada manual do 
+dado. Será criada uma rotina de importação do arquivo PDF para cada contrato, caso mais de um 
+cliente possua um modelo de arquivo semelhante ao outro será usada a mesma rotina de 
+importação. Deverá ser criada uma tabela de parametrização para vincular o cliente à rotina de 
+importação do arquivo PDF. Os seguintes dados serão necessários para a importação do arquivo 
+PDF: 
+ 
+     
+ 
+Rua Correa Neto, 589 – Centro – Poços de Caldas / MG  
+hard.net@hardnetinformatica.com.br       Telefone.: (35) 3721 4750 
+ 
+? Período de vigência do contrato; 
+? Produto do cliente; 
+? Descrição do produto; 
+? Quantidade ou Valor total do item no contrato; 
+? Preço; 
+? Base LME; 
+? Base USD; 
+? Fórmula de reajuste; 
+? Tipo de Reajuste (Frequência). 
+ 
+2.2. Atualização de Dados 
+ 
+A planilha deverá conter na sheet principal um botão para a atualização de dados 
+complementares que serão usados para os cálculos de reajuste de preço e geração de 
+conhecimento. Ao clicar no botão será exibida uma tela para informar os arquivos de entrada e os 
+mesmos serão processados um de cada vez segundo o seu propósito. A importação deverá ser 
+gravada como histórico com exceção do de/para de produtos, de maneira que para o 
+processamento do contrato no mês atual deverá ser considerado a importação do último mês. Isso 
+devido ao fato de que será possível refazer o processamento de um contrato e deverá ser 
+considerado os dados da época que foi feito o processamento inicial daquele contrato. 
+ 
+2.2.1. De / Para Produto Cliente x Produto Prysmian 
+ 
+O código de produto compreendido pelo cliente é diferente do código de produto 
+compreendido pela Prysmian, mesmo sendo fisicamente e descritivamente o mesmo produto, de 
+maneira que na tela de importação dos dados deverá ser selecionado o arquivo de origem dos 
+dados, o sistema deverá validar o arquivo seguindo um padrão a ser definido e importar os dados 
+para a sheet de cadastros auxiliares e parametrizações.  
+O arquivo deverá conter os dados de código de produto do cliente x código produto 
+Prysmian referente a todos os contratos em vigência na companhia.  
+     
+ 
+Rua Correa Neto, 589 – Centro – Poços de Caldas / MG  
+hard.net@hardnetinformatica.com.br       Telefone.: (35) 3721 4750 
+ 
+ 
+2.2.2. Dados do Produtos Prysmian 
+ 
+A tela de atualização dos dados deverá possuir um campo para indicar o arquivo com os 
+dados dos produtos dos contratos, deverá ser feita a validação do arquivo com base em um padrão 
+a ser definido. Os dados deverão ser gravados em uma tabela na sheet de cadastros auxiliares e 
+parametrizações. Os seguintes dados de produtos são esperados do arquivo: 
+? Peso do produto; 
+? Peso de metal contido no produto; 
+? CVF Aberto – Custo variável de fabricação do produto. 
+ 
+2.2.3. Dados Faturamento e Carteira 
+ 
+Deverá ser disponibilizado na tela de atualização dos dados um campo para que seja 
+informada a planilha com os dados de faturamento referente aos contratos. Ao efetuar o 
+processamento da importação dos dados deverá ser verificado se o arquivo está dentro de um 
+padrão a ser definido. Os seguintes dados deverão ser importados: 
+? Peso; 
+? Receita; 
+? Margem; 
+ 
+2.3. Reajuste de Variações das Fórmulas COGE 
+ 
+A planilha deverá possuir uma tabela na sheet de cadastros auxiliares e parametrizações 
+onde serão informadas as formulas COGE e a parametrização das variações das variáveis das 
+fórmulas que são alteradas mensalmente.  
+Na sheet principal da planilha deverá haver um botão que chamará uma tela onde serão 
+informadas as variações das variáveis de determinada fórmula COGE para determinado mês/ano. 
+Para cada fórmula existem variáveis diferentes que serão consideradas mais adiante no projeto. 
+     
+ 
+Rua Correa Neto, 589 – Centro – Poços de Caldas / MG  
+hard.net@hardnetinformatica.com.br       Telefone.: (35) 3721 4750 
+ 
+2.4. Processamento Contratos 
+2.4.1. Sheet de Análise de Contratos 
+Na sheet de análise dos contratos deverá haver uma tabela onde os dados referentes aos 
+contratos serão processados. Esta tabela será preenchida pelas rotinas de processamento dos 
+contratos ou de reprocessamento dos contratos. As informações desta tabela serão obtidas das 
+tabelas de cadastro de contratos e dados auxiliares de produtos, de/para produtos, faturamento e 
+fórmulas COGE. Após obter os dados a planilha irá efetuar os cálculos para se chegar ao preço do 
+contrato e saldo ainda a ser consumido do contrato nos meses seguintes até o encerramento do 
+contrato. Ainda na sheet de análise deverá conter três botões sendo para importar e processar os 
+contratos referente ao período atual, simular o preço e gravar os dados. A tabela será constituída 
+dos seguintes dados: 
+? Nr. Contrato; 
+? Cód. Cliente; 
+? Cód. Prod. Cliente; 
+? Cód. Prod. Prysmian; 
+? Desc. Produto; 
+? Preço Base; 
+? Valor Contrato; 
+? Valor Faturado; 
+? Valor Carteira; 
+? Previsão Total; 
+? Previsão Mês Valor; 
+? Ano Preço Anterior; 
+? Mês Preço Anterior; 
+? Preço Anterior; 
+? Preço Reajustado; 
+? Variação Preço; 
+? Previsão Mês Receita Líquida; 
+? Previsão Mês PLT; 
+? Previsão Mês Margem; 
+ 
+ 
+     
+ 
+Rua Correa Neto, 589 – Centro – Poços de Caldas / MG  
+hard.net@hardnetinformatica.com.br       Telefone.: (35) 3721 4750 
+ 
+ 
+2.4.2. Sheet de Banco de Dados Histórico 
+ 
+Sempre que houver o processamento dos dados, os mesmos deverão ser gravados em 
+uma tabela na sheet que servirá de banco de dados histórico onde será armazenado o 
+processamento de cada item do contrato observando que o processamento pode ser com base 
+nas variações reais do site da COGE ou nas variações de simulação de processo informadas pelo 
+usuário, na base de dados serão diferenciados os dois tipos de processamento real e simulado. 
+Na sheet de banco de dados deverá haver um botão para a exportação dos dados, uma vez que a 
+planilha estará bloqueada para edição. A tabela que conterá o baco de dados histórico deverá 
+armazenar os seguintes dados: 
+? Ano; 
+? Mês; 
+? Tipo Processamento; 
+? Nr. Contrato; 
+? Cód. Cliente; 
+? Cód. Produto Cliente; 
+? Cód. Produto Prysmian; 
+? Desc. Produto; 
+? Preço Base; 
+? Valor Contrato; 
+? Valor Faturado; 
+? Valor Carteira; 
+? Previsão Total; 
+? Previsão Mês Valor; 
+? Preço Anterior; 
+? Preço Reajustado; 
+? Variação Preço; 
+? Previsão Mês Receita Líquida; 
+? Previsão Mês PLT; 
+? Previsão Mês Margem. 
+     
+ 
+Rua Correa Neto, 589 – Centro – Poços de Caldas / MG  
+hard.net@hardnetinformatica.com.br       Telefone.: (35) 3721 4750 
+ 
+ 
+ 
+2.4.3. Processamento Contratos Período Atual 
+ 
+Na sheet de análise de contratos deverá ser disponibilizado um botão para seleção dos 
+contratos a serem processados, de maneira que ao clicar no botão deverão ser listados todos os 
+contratos cadastrados e deverá ser possível selecionar quais contratos serão processados naquele 
+momento, deverá ser possível selecionar todos os contratos de uma vez. 
+O processamento dos contratos consistem em obter as informações de cada contrato e 
+cada item do contrato, buscar as informações de de/para de produtos, buscar as informações dos 
+produtos, buscar as informações de faturamento de produtos e aplicar as fórmulas de preço com 
+base no último processamento feito para aquele contrato levando em consideração que a 
+periodiciadade de cada contrato varia, de maneira que deverá ser verificado se o contrato deverá 
+ser processado naquele mês.  
+O cálculo de processamento do contrato poderá ser feito de duas maneiras, o preço real 
+que leva em consideração às variações da fórmula COGE ou simulação que levará em 
+consideração as variações informadas pelo usuário que está operando a planilha. Para que o 
+cálculo esteja correto é necessário sempre atualizar as variações das fórmulas COGE como 
+descrito no item 2.3. 
+A sheet de análise também conterá um botão para salvar os dados processados, de 
+maneira que sempre que algum contrato for processado será necessário clicar no botão salvar para 
+gravar os dados na sheet de base de dados históricos. Caso já exista algum registro na base de 
+dados os dados serão sobrescritos. 
+ 
+ 
+ 
+ 
+ 
+     
+ 
+Rua Correa Neto, 589 – Centro – Poços de Caldas / MG  
+hard.net@hardnetinformatica.com.br       Telefone.: (35) 3721 4750 
+ 
+ 
+2.4.4. Reprocessamento Contratos 
+ 
+Na sheet principal da planilha deverá haver um botão para o reprocessamento de contratos 
+onde será chamada a rotina para reprocessar os contratos de períodos anteriores ao mês atual 
+respeitando sempre a periodicidade do contrato. Deverá ser possível selecionar o período e os 
+contratos que deverão ser processados. O processamento consiste no mesmo descrito no item 
+2.4.3, lembrando que é necessário sempre reajustar as variações das fórmulas COGE como 
+descrito no item 2.3 para os dados do período que se está necessitando reprocessar os contratos. 
+Após feito o reprocessamento dos contratos será exibia a sheet de análise dos contratos e o 
+usuário poderá aplicar a simulação de preço para aquele determinado contrato.  
+Para este processo de reprocessamento de contrato deverá ser marcado para cada 
+contrato processado o mês e ano de referencia ao qual o contrato está sendo processado para que 
+quando os dados sejam gravados seja sobrescrevido os dados de processamento do contrato na 
+base de dados histórica para o mês reprocessado. 
+Os cálculos para referência do reprocessamento de algum contrato deverão levar em 
+consideração o ano e mês anterior ao que se está fazendo o reprocessamento para as informações 
+de preço anterior, faturamento e custo do produto.  
+O usuário deverá ter em mente que efetuar o reprocessamento de um contrato em 
+determinado mês deverá ser feito o reprocessamento dos meses seguintes para que os dados 
+sejam consistentes com o preço formado a partir do ponto em que fez o primeiro reprocessamento 
+daquele contrato. 
+ 
+ 
+ 
+ 
+ 
+     
+ 
+Rua Correa Neto, 589 – Centro – Poços de Caldas / MG  
+hard.net@hardnetinformatica.com.br       Telefone.: (35) 3721 4750 
+ 
+ 
+2.5. Relatórios e Gráficos 
+ 
+2.5.1. Relatórios 
+ 
+Deverá ser liberado para filtro a sheet de base de dados histórico que servirá como base 
+de relatórios inicial. Ainda não compreende neste escopo a elaboração de algum outro relatório. 
+ 
+2.5.2. Gráficos 
+ 
+Ainda serão definidos os gráficos que a planilha deverá apresentar, de maneira que será 
+criada uma sheet para este fim que servirá de dashboard para os indicadores que a planilha irá 
+gerar. 
+3. Requisitos Não Funcionais 
+ 
+3.1. Ambiente 
+ 
+A planilha deverá ser criada levando em consideração a não utilização de componentes e 
+DLLs que não sejam de uso padrão no ambiente Microsoft Windows e Microsoft Office, isso devido 
+ao fato de haver a possibilidade de descontinuação de alguma DLL fora do padrão que venha a 
+ser utilizada tornando alguma funcionalidade da planilha inoperante. O seguinte ambiente deverá 
+ser considerado: 
+? Sistema Operacional Microsoft Windows 10 64bits; 
+? Microsoft Office 365; 
+ 
+ 
+ 
+     
+ 
+Rua Correa Neto, 589 – Centro – Poços de Caldas / MG  
+hard.net@hardnetinformatica.com.br       Telefone.: (35) 3721 4750 
+ 
+ 
+3.2. Segurança 
+ 
+A planilha deverá ter a pasta de trabalho (workbook) e as planilhas (sheets) bloqueadas 
+com a mesma senha. Sempre que um processamento for executado deverá ser feito o bloqueio 
+das sheets. Será permitido apenas filtros nas tabelas das sheets, de maneira que caso haja 
+necessidade de os dados deverá ser exportado para outra planilha de Excel. 
+ Todas as fórmulas da planilha deverão ser aplicadas em VBA e depois os dados aplicados 
+como valor com exceções a fórmulas que precisam ser recalculadas com imput do usuário no 
+momento da análise. 
+PRÉ-REQUISITOS NECESSÁRIOS À FUNÇÃO 
+ESCOLARIDADE: 
+Graduado  
+EXPERIÊNCIA: 
+Desejável experiência de 3 a 5 anos na área de suporte.  
+HABILIDADES E COMPETÊNCIAS ESSENCIAIS 
+Foco do cliente. 
+Negociação. 
+Comunicação. 
+Bom relacionamento interpessoal 
+Boa argumentação. 
+Criatividade. 
+Iniciativa e pró-atividade. 
+Raciocínio lógico. 
+Saber trabalhar em equipe. 
+Saber trabalhar sob pressão. 
+Boa comunicação verbal e escrita. 
+     
+ 
+Rua Correa Neto, 589 – Centro – Poços de Caldas / MG  
+hard.net@hardnetinformatica.com.br       Telefone.: (35) 3721 4750 
+ 
+ 
+ 
+3.0  Proposta Comercial 
+Manutenção e suporte Analista Gestão de Telefonia; Sorocaba , 01 Analista. 
+VALOR HORA QUANTIDADE 
+HORAS 
+TOTAL  MESES TOTAL 2 
+R$59,80 180 R$59,80 ------- R$10.764,00 
+   TOTAL 2 R$10.764,00 
+Total Geral:  
+Total 1  = Previsto de acordo escopo 180Hrs. 
+Previsão de acordo com informação enviada via escopo. 
+OS: Como informado os arquivos para analise são confidenciais, podendo ser tratados apenas fechar um 
+pedido, então a quantidade de horas pode variar um pouco tanto para mais quanto para menos. 
+ 
+ 
+ 
+Atenciosamente, 
+Marcelo Camargo 
+marcelo.camargo@hnsi.com.br 
+Telefone: (35) 9 988994201 

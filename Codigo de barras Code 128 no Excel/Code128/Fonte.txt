@@ -1,0 +1,70 @@
+Public Function code128$(chaine$)
+Dim i%, checksum&, mini%, dummy%, tableB As Boolean
+code128$ = ""
+If Len(chaine$) > 0 Then
+For i% = 1 To Len(chaine$)
+Select Case Asc(Mid$(chaine$, i%, 1))
+Case 32 To 126, 203
+Case Else
+i% = 0
+Exit For
+End Select
+Next
+code128$ = ""
+tableB = True
+If i% > 0 Then
+i% = 1
+Do While i% <= Len(chaine$)
+If tableB Then         
+mini% = IIf(i% = 1 Or i% + 3 = Len(chaine$), 4, 6)
+GoSub testnum
+If mini% < 0 Then
+If i% = 1 Then
+code128$ = Chr$(205)
+Else
+code128$ = code128$ & Chr$(199)
+End If
+tableB = False
+Else
+If i% = 1 Then code128$ = Chr$(204)
+End If
+End If
+If Not tableB Then
+mini% = 2
+GoSub testnum
+If mini% < 0 Then
+dummy% = Val(Mid$(chaine$, i%, 2))
+dummy% = IIf(dummy% < 95, dummy% + 32, dummy% + 100)
+code128$ = code128$ & Chr$(dummy%)
+i% = i% + 2
+Else
+code128$ = code128$ & Chr$(200)
+tableB = True
+End If
+End If
+If tableB Then
+code128$ = code128$ & Mid$(chaine$, i%, 1)
+i% = i% + 1
+End If
+Loop
+For i% = 1 To Len(code128$)
+dummy% = Asc(Mid$(code128$, i%, 1))
+dummy% = IIf(dummy% < 127, dummy% - 32, dummy% - 100)
+If i% = 1 Then checksum& = dummy%
+checksum& = (checksum& + (i% - 1) * dummy%) Mod 103
+Next
+checksum& = IIf(checksum& < 95, checksum& + 32, checksum& + 100)
+code128$ = code128$ & Chr$(checksum&) & Chr$(206)
+End If
+End If
+Exit Function
+testnum:
+mini% = mini% - 1
+If i% + mini% <= Len(chaine$) Then
+Do While mini% >= 0
+If Asc(Mid$(chaine$, i% + mini%, 1)) < 48 Or Asc(Mid$(chaine$, i% + mini%, 1)) > 57 Then Exit Do
+mini% = mini% - 1
+Loop
+End If
+Return
+End Function
